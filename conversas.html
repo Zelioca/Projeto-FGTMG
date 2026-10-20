@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Forum</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="conversas.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <h1 id="logo">SCHOOL FORUM</h1>
+      </a>
+    </header>
+    <nav>
+      <h1>From gossip to more gossip</h1>
+    </nav>
+    <main>
+      <article>
+        <img src="img/images (2).jfif" class="tema" id="imagemTema" />
+        <h1 id="tituloTema">Sugestões de conversa</h1>
+        <ul id="listaSugestoes"></ul>
+      </article>
+      <aside>
+        <div id="comentarioscss">
+          <div id="comentarios-p1">
+            <h4 id="contador">Comments (0):</h4>
+          </div>
+
+          <script>
+            let contador = 0;
+            function agregarComentario() {
+              const input = document.getElementById("input-comentario");
+              const texto = input.value;
+
+              if (texto === "") {
+                return;
+              }
+
+              const nuevoComentario = document.createElement("p");
+              nuevoComentario.textContent = "Usuario: " + texto;
+
+              const contenedor = document.getElementById("comentarioscss");
+              contenedor.appendChild(nuevoComentario);
+
+              contador++;
+              document.getElementById("contador").textContent =
+                "Comments (" + contador + "):";
+
+              input.value = "";
+            }
+          </script>
+          <br />
+        </div>
+
+        <div id="comentariosjs">
+          <input
+            type="text"
+            id="input-comentario"
+            placeholder="Escreva um comentário"
+          />
+          <button onclick="agregarComentario()">Enviar</button>
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <h4>
+        Web Site maked by Valentin Liscano, Hiram Silva, Samuel Ferraz, Enzo
+        Alves e Diego.
+      </h4>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
